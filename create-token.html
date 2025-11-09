@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Token - H.A.J Alchemy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="brand">
+                    <h1 class="logo">H.A.J Alchemy</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="security.html">Security</a></li>
+                    <li><a href="#docs">Docs</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <select class="language-selector">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                    <button class="btn-secondary" id="connectWalletBtn">Connect Wallet</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wizard-main">
+        <div class="container">
+            <div class="wizard-container">
+                <div class="wizard-content">
+                    <div class="wizard-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-text" id="progressText">Step 1 of 5</div>
+                    </div>
+
+                    <div class="wizard-steps">
+                        <div class="wizard-step active" id="step1">
+                            <h2>Choose Token Type</h2>
+                            <p class="step-description">Select the token standard that best fits your needs</p>
+
+                            <div class="token-type-selector">
+                                <label class="token-type-card">
+                                    <input type="radio" name="tokenType" value="ERC20" checked>
+                                    <div class="token-type-content">
+                                        <h3>ERC-20</h3>
+                                        <p>Fungible tokens - Perfect for cryptocurrencies, utility tokens, and governance tokens</p>
+                                        <span class="token-type-badge">Most Popular</span>
+                                    </div>
+                                </label>
+                                <label class="token-type-card">
+                                    <input type="radio" name="tokenType" value="ERC721">
+                                    <div class="token-type-content">
+                                        <h3>ERC-721</h3>
+                                        <p>Non-fungible tokens - Ideal for unique digital collectibles, NFT art, and gaming assets</p>
+                                    </div>
+                                </label>
+                                <label class="token-type-card">
+                                    <input type="radio" name="tokenType" value="ERC1155">
+                                    <div class="token-type-content">
+                                        <h3>ERC-1155</h3>
+                                        <p>Multi-token standard - Supports both fungible and non-fungible tokens in one contract</p>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="chainSelect">Select Blockchain Network</label>
+                                <select id="chainSelect" class="form-control">
+                                    <option value="ethereum">Ethereum Mainnet</option>
+                                    <option value="bnb" selected>BNB Smart Chain</option>
+                                    <option value="base">Base</option>
+                                    <option value="arbitrum">Arbitrum</option>
+                                    <option value="blast">Blast</option>
+                                    <option value="opbnb">opBNB</option>
+                                    <option value="polygon">Polygon</option>
+                                    <option value="avalanche">Avalanche</option>
+                                </select>
+                                <small class="form-hint">Estimated gas fee: <span id="gasFee">$2.50</span></small>
+                            </div>
+                        </div>
+
+                        <div class="wizard-step" id="step2">
+                            <h2>Basic Token Information</h2>
+                            <p class="step-description">Configure your token's core properties</p>
+
+                            <div class="form-group">
+                                <label for="tokenName">Token Name <span class="required">*</span></label>
+                                <input type="text" id="tokenName" class="form-control" placeholder="e.g., My Awesome Token" maxlength="40" required>
+                                <small class="form-hint">Maximum 40 characters</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tokenSymbol">Token Symbol <span class="required">*</span></label>
+                                <input type="text" id="tokenSymbol" class="form-control" placeholder="e.g., MAT" maxlength="8" required>
+                                <small class="form-hint">2-8 uppercase characters (A-Z, 0-9)</small>
+                            </div>
+
+                            <div class="form-group" id="totalSupplyGroup">
+                                <label for="totalSupply">Total Supply <span class="required">*</span></label>
+                                <input type="number" id="totalSupply" class="form-control" placeholder="e.g., 1000000" min="1" required>
+                                <small class="form-hint">Total number of tokens to be created</small>
+                            </div>
+
+                            <div class="form-group" id="decimalsGroup">
+                                <label for="decimals">Decimals</label>
+                                <input type="number" id="decimals" class="form-control" value="18" min="0" max="18">
+                                <small class="form-hint">Number of decimal places (0-18, standard is 18)</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="mintable">
+                                    <span>Make token mintable (allow creating new tokens after deployment)</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group" id="logoUploadGroup">
+                                <label>Token Logo (Optional)</label>
+                                <div class="file-upload-area" id="fileUploadArea">
+                                    <input type="file" id="logoUpload" accept="image/*" hidden>
+                                    <div class="upload-placeholder">
+                                        <span class="upload-icon">📷</span>
+                                        <p>Click to upload or drag and drop</p>
+                                        <small>PNG, JPG, WEBP up to 5MB</small>
+                                    </div>
+                                    <div class="upload-preview" id="uploadPreview" style="display: none;">
+                                        <img id="previewImage" src="" alt="Preview">
+                                        <button type="button" class="remove-image" id="removeImage">&times;</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-step" id="step3">
+                            <h2>Tokenomics & Features</h2>
+                            <p class="step-description">Configure advanced token mechanics</p>
+
+                            <div class="tokenomics-section">
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="enableTransactionFee">
+                                        <span>Enable Transaction Fee</span>
+                                    </label>
+                                </div>
+
+                                <div id="feeConfiguration" class="fee-config" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="transactionFee">Transaction Fee Percentage</label>
+                                        <div class="slider-container">
+                                            <input type="range" id="transactionFee" min="0" max="25" value="5" step="0.5" class="slider">
+                                            <span class="slider-value" id="transactionFeeValue">5%</span>
+                                        </div>
+                                    </div>
+
+                                    <h3>Fee Distribution</h3>
+                                    <p class="section-note">Total must equal 100%</p>
+
+                                    <div class="form-group">
+                                        <label for="burnFee">Burn Fee</label>
+                                        <div class="slider-container">
+                                            <input type="range" id="burnFee" min="0" max="100" value="30" class="slider">
+                                            <span class="slider-value" id="burnFeeValue">30%</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="liquidityFee">Liquidity Fee</label>
+                                        <div class="slider-container">
+                                            <input type="range" id="liquidityFee" min="0" max="100" value="40" class="slider">
+                                            <span class="slider-value" id="liquidityFeeValue">40%</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="reflectionFee">Reflection Fee</label>
+                                        <div class="slider-container">
+                                            <input type="range" id="reflectionFee" min="0" max="100" value="30" class="slider">
+                                            <span class="slider-value" id="reflectionFeeValue">30%</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="fee-total">
+                                        <strong>Total: <span id="feeTotal">100%</span></strong>
+                                        <span id="feeWarning" class="warning-text" style="display: none;">Must equal 100%</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="enableBuyback">
+                                        <span>Enable Buyback & Burn</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="enableReflection">
+                                        <span>Enable Holder Reflections</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="autoLiquidity">
+                                        <span>Auto-add Liquidity</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-step" id="step4">
+                            <h2>Advanced Options</h2>
+                            <p class="step-description">Optional security and control features</p>
+
+                            <div class="advanced-options">
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="pausable">
+                                        <span>Pausable</span>
+                                    </label>
+                                    <small class="form-hint">Allow pausing all token transfers</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="burnable">
+                                        <span>Burnable</span>
+                                    </label>
+                                    <small class="form-hint">Allow token holders to burn their tokens</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="blacklistable">
+                                        <span>Blacklist Function</span>
+                                    </label>
+                                    <small class="form-hint">Ability to blacklist specific addresses</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="whitelistable">
+                                        <span>Whitelist Function</span>
+                                    </label>
+                                    <small class="form-hint">Restrict transfers to whitelisted addresses only</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="renounceOwnership">
+                                        <span>Renounce Ownership After Deploy</span>
+                                    </label>
+                                    <small class="form-hint warning-text">Warning: This action is irreversible</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ownerWallet">Owner Wallet Address <span class="required">*</span></label>
+                                    <input type="text" id="ownerWallet" class="form-control" placeholder="0x..." required>
+                                    <small class="form-hint">Address that will own and control the token contract</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-step" id="step5">
+                            <h2>Review & Deploy</h2>
+                            <p class="step-description">Review your token configuration before deployment</p>
+
+                            <div class="review-container">
+                                <div class="review-section">
+                                    <h3>Token Information</h3>
+                                    <div class="review-item">
+                                        <span>Token Type:</span>
+                                        <strong id="reviewTokenType">ERC-20</strong>
+                                    </div>
+                                    <div class="review-item">
+                                        <span>Blockchain:</span>
+                                        <strong id="reviewChain">BNB Smart Chain</strong>
+                                    </div>
+                                    <div class="review-item">
+                                        <span>Token Name:</span>
+                                        <strong id="reviewName">-</strong>
+                                    </div>
+                                    <div class="review-item">
+                                        <span>Symbol:</span>
+                                        <strong id="reviewSymbol">-</strong>
+                                    </div>
+                                    <div class="review-item">
+                                        <span>Total Supply:</span>
+                                        <strong id="reviewSupply">-</strong>
+                                    </div>
+                                    <div class="review-item">
+                                        <span>Decimals:</span>
+                                        <strong id="reviewDecimals">18</strong>
+                                    </div>
+                                </div>
+
+                                <div class="review-section">
+                                    <h3>Features Enabled</h3>
+                                    <div id="reviewFeatures">
+                                        <p class="empty-state">No additional features enabled</p>
+                                    </div>
+                                </div>
+
+                                <div class="review-section">
+                                    <h3>Deployment Cost</h3>
+                                    <div class="review-item">
+                                        <span>Estimated Gas Fee:</span>
+                                        <strong id="reviewGasFee">$2.50</strong>
+                                    </div>
+                                    <div class="review-item">
+                                        <span>Platform Fee:</span>
+                                        <strong>$0.00</strong>
+                                    </div>
+                                    <div class="review-item total">
+                                        <span>Total Cost:</span>
+                                        <strong id="reviewTotalCost">$2.50</strong>
+                                    </div>
+                                </div>
+
+                                <div class="terms-acceptance">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="acceptTerms" required>
+                                        <span>I accept the <a href="#terms" target="_blank">Terms & Conditions</a> and understand the risks</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wizard-navigation">
+                        <button type="button" class="btn-secondary" id="prevBtn" style="display: none;">Previous</button>
+                        <button type="button" class="btn-primary" id="nextBtn">Next</button>
+                        <button type="button" class="btn-primary" id="deployBtn" style="display: none;">Deploy Token</button>
+                    </div>
+                </div>
+
+                <div class="wizard-preview">
+                    <div class="preview-card">
+                        <h3>Live Preview</h3>
+                        <div class="token-preview">
+                            <div class="token-preview-logo" id="previewLogo">
+                                <span>🪙</span>
+                            </div>
+                            <h2 id="previewName">Your Token</h2>
+                            <p id="previewSymbol">SYMBOL</p>
+                            <div class="preview-details">
+                                <div class="preview-detail">
+                                    <span>Type</span>
+                                    <strong id="previewType">ERC-20</strong>
+                                </div>
+                                <div class="preview-detail">
+                                    <span>Chain</span>
+                                    <strong id="previewChain">BNB</strong>
+                                </div>
+                                <div class="preview-detail">
+                                    <span>Supply</span>
+                                    <strong id="previewSupply">-</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tokenomics-preview" id="tokenomicsPreview" style="display: none;">
+                            <h4>Tokenomics</h4>
+                            <canvas id="tokenomicsChart"></canvas>
+                            <div class="tokenomics-legend" id="tokenomicsLegend"></div>
+                        </div>
+
+                        <div class="example-transaction">
+                            <h4>Example Transaction</h4>
+                            <p>Transfer 1000 tokens:</p>
+                            <div class="transaction-breakdown">
+                                <div class="tx-item">
+                                    <span>Amount sent:</span>
+                                    <span>1000</span>
+                                </div>
+                                <div class="tx-item">
+                                    <span>Transaction fee:</span>
+                                    <span id="txFeeExample">0</span>
+                                </div>
+                                <div class="tx-item total">
+                                    <span>Recipient receives:</span>
+                                    <strong id="txReceiveExample">1000</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-card">
+                        <h4>Need Help?</h4>
+                        <p>Our team is here to assist you with your token creation.</p>
+                        <button class="btn-outline btn-small">Contact Support</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="deploymentModal" class="modal">
+        <div class="modal-content">
+            <h2>Deploying Your Token</h2>
+            <div class="deployment-status">
+                <div class="spinner"></div>
+                <p id="deploymentStatusText">Preparing deployment...</p>
+                <div class="deployment-progress">
+                    <div class="deployment-step completed">
+                        <span class="step-icon">✓</span>
+                        <span>Validating configuration</span>
+                    </div>
+                    <div class="deployment-step active">
+                        <span class="step-icon"></span>
+                        <span id="currentDeployStep">Waiting for wallet confirmation</span>
+                    </div>
+                    <div class="deployment-step">
+                        <span class="step-icon"></span>
+                        <span>Processing transaction</span>
+                    </div>
+                    <div class="deployment-step">
+                        <span class="step-icon"></span>
+                        <span>Finalizing deployment</span>
+                    </div>
+                </div>
+                <div class="transaction-hash" id="transactionHash" style="display: none;">
+                    <p>Transaction Hash:</p>
+                    <a href="#" target="_blank" id="txHashLink"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content success-content">
+            <div class="success-icon">✓</div>
+            <h2>Token Deployed Successfully!</h2>
+            <p>Your token has been deployed to the blockchain</p>
+            <div class="success-details">
+                <div class="success-item">
+                    <span>Contract Address:</span>
+                    <div class="copyable">
+                        <input type="text" id="contractAddress" value="0x..." readonly>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                </div>
+                <div class="success-actions">
+                    <a href="#" target="_blank" class="btn-primary" id="viewOnExplorer">View on Explorer</a>
+                    <button class="btn-outline" onclick="location.href='index.html'">Create Another Token</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="wizard.js"></script>
+</body>
+</html>

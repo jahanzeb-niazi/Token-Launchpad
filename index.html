@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.A.J Alchemy - Create Your Token</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="brand">
+                    <h1 class="logo">H.A.J Alchemy</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="security.html">Security</a></li>
+                    <li><a href="#docs">Docs</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <select class="language-selector">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+
+                    <button class="btn-secondary" id="connectWallet">Connect Wallet</button>
+                    <button class="btn-primary" onclick="location.href='create-token.html'">Launch App</button>
+                </div>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Create Your Own Token in Minutes</h1>
+                    <p class="hero-subtitle">No coding required. Launch ERC-20, ERC-721, or ERC-1155 tokens across
+                        multiple blockchains with advanced tokenomics features.</p>
+                    <div class="hero-actions">
+                        <button class="btn-primary btn-large" onclick="location.href='create-token.html'">Create Token
+                            Now</button>
+                        <button class="btn-outline btn-large" onclick="location.href='features.html'">Explore
+                            Features</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <h3>10,000+</h3>
+                            <p>Tokens Created</p>
+                        </div>
+                        <div class="stat">
+                            <h3>8</h3>
+                            <p>Supported Chains</p>
+                        </div>
+                        <div class="stat">
+                            <h3>99.9%</h3>
+                            <p>Success Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-preview">
+            <div class="container">
+                <h2 class="section-title">Powerful Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🪙</div>
+                        <h3>Multiple Token Standards</h3>
+                        <p>Support for ERC-20, ERC-721, and ERC-1155 tokens with customizable parameters.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⛓️</div>
+                        <h3>Multi-Chain Support</h3>
+                        <p>Deploy on Ethereum, BNB Chain, Base, Arbitrum, Blast, opBNB, and more.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Advanced Tokenomics</h3>
+                        <p>Configure transaction fees, burn mechanisms, reflections, and buyback features.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Security First</h3>
+                        <p>Audited smart contracts with optional security features like pausable and whitelist.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Instant Deployment</h3>
+                        <p>Deploy your token in minutes with our streamlined creation process.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Live Preview</h3>
+                        <p>See your token configuration in real-time before deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Choose Token Type</h3>
+                        <p>Select between ERC-20, ERC-721, or ERC-1155 token standards.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Configure Settings</h3>
+                        <p>Set your token name, symbol, supply, and advanced tokenomics features.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Preview & Deploy</h3>
+                        <p>Review your configuration and deploy to your chosen blockchain.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Manage & Grow</h3>
+                        <p>Monitor your token and manage advanced features from your dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Launch Your Token?</h2>
+                <p>Join thousands of creators who have launched successful tokens with H.A.J Alchemy</p>
+                <button class="btn-primary btn-large" onclick="location.href='create-token.html'">Get Started
+                    Now</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>H.A.J Alchemy</h3>
+                    <p>The most advanced token creation platform for Web3 creators.</p>
+                    <div class="social-links">
+                        <a href="#twitter" class="social-link">Twitter</a>
+                        <a href="#discord" class="social-link">Discord</a>
+                        <a href="#telegram" class="social-link">Telegram</a>
+                        <a href="#github" class="social-link">GitHub</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#api">API</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                        <li><a href="#audit">Audit Reports</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 H.A.J Alchemy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="walletModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Connect Wallet</h2>
+            <div class="wallet-options">
+                <button class="wallet-option">
+                    <span class="wallet-icon">🦊</span>
+                    <span>MetaMask</span>
+                </button>
+                <button class="wallet-option">
+                    <span class="wallet-icon">💼</span>
+                    <span>WalletConnect</span>
+                </button>
+                <button class="wallet-option">
+                    <span class="wallet-icon">🔷</span>
+                    <span>Coinbase Wallet</span>
+                </button>
+                <button class="wallet-option">
+                    <span class="wallet-icon">🌐</span>
+                    <span>Trust Wallet</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

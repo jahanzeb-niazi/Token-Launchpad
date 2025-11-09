@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security - H.A.J Alchemy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="brand">
+                    <h1 class="logo">H.A.J Alchemy</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="security.html" class="active">Security</a></li>
+                    <li><a href="#docs">Docs</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <select class="language-selector">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                    <button class="btn-secondary" id="connectWallet">Connect Wallet</button>
+                    <button class="btn-primary" onclick="location.href='create-token.html'">Launch App</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Security First Approach</h1>
+                    <p class="hero-subtitle">Built with industry-leading security practices to protect your tokens and your users</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-preview">
+            <div class="container">
+                <h2 class="section-title">Smart Contract Security</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Audited Contracts</h3>
+                        <p>All smart contract templates have been professionally audited by leading blockchain security firms to ensure safety and reliability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✅</div>
+                        <h3>Battle-Tested Code</h3>
+                        <p>Our contracts are based on OpenZeppelin standards, the most widely-used and trusted library in the Ethereum ecosystem.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Reentrancy Protection</h3>
+                        <p>Built-in protection against reentrancy attacks using industry-standard guards and security patterns.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔐</div>
+                        <h3>Access Control</h3>
+                        <p>Robust access control mechanisms ensure only authorized addresses can perform privileged operations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚠️</div>
+                        <h3>Integer Overflow Protection</h3>
+                        <p>Safe math operations prevent overflow and underflow vulnerabilities in all calculations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Gas Optimization</h3>
+                        <p>Optimized code to minimize gas costs while maintaining security and functionality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">Platform Security</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔑</div>
+                        <h3>Non-Custodial</h3>
+                        <p>We never have access to your private keys or funds. All transactions are signed directly from your wallet.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Decentralized Deployment</h3>
+                        <p>Smart contracts are deployed directly to the blockchain. No intermediary servers or centralized control.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Open Source</h3>
+                        <p>All smart contract code is open source and verifiable on blockchain explorers for complete transparency.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📡</div>
+                        <h3>Secure Communication</h3>
+                        <p>All platform communications are encrypted using TLS/SSL protocols to protect your data.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚨</div>
+                        <h3>Real-Time Monitoring</h3>
+                        <p>Continuous monitoring of deployed contracts and platform infrastructure for suspicious activity.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>Compliance Ready</h3>
+                        <p>Built with regulatory considerations in mind, including optional KYC/AML integration capabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-preview">
+            <div class="container">
+                <h2 class="section-title">Optional Security Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⏸️</div>
+                        <h3>Pausable Transfers</h3>
+                        <p>Emergency pause functionality allows you to halt all token transfers in case of security threats.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚫</div>
+                        <h3>Blacklist Function</h3>
+                        <p>Prevent specific addresses from transferring tokens to combat fraud and malicious activity.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✔️</div>
+                        <h3>Whitelist Function</h3>
+                        <p>Restrict token transfers to only approved addresses for enhanced security and compliance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏱️</div>
+                        <h3>Time-Locked Operations</h3>
+                        <p>Add time delays to critical operations giving the community time to react to changes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Transfer Limits</h3>
+                        <p>Set maximum transaction amounts to prevent large dumps and market manipulation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎚️</div>
+                        <h3>Upgradeable Proxies</h3>
+                        <p>Optional upgrade mechanisms allowing bug fixes while maintaining security and decentralization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">Best Practices</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Test Thoroughly</h3>
+                        <p>Deploy on testnets first and thoroughly test all functionality before mainnet deployment.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Verify Contracts</h3>
+                        <p>Always verify your smart contract source code on blockchain explorers for transparency.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Secure Your Wallet</h3>
+                        <p>Use hardware wallets for owner accounts and never share your private keys.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Regular Audits</h3>
+                        <p>Consider additional security audits for high-value tokens or complex tokenomics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-preview">
+            <div class="container">
+                <h2 class="section-title">Security Audits & Certifications</h2>
+                <div class="review-container" style="max-width: 100%; margin: 0 auto;">
+                    <div class="review-section">
+                        <h3>Third-Party Audits</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            Our smart contract templates have undergone comprehensive security audits by leading blockchain security firms.
+                            Each template is tested for common vulnerabilities including reentrancy, overflow/underflow, access control issues,
+                            and gas optimization opportunities.
+                        </p>
+                        <div style="margin-top: var(--spacing-md); padding: var(--spacing-md); background-color: var(--tertiary-black); border-radius: var(--border-radius);">
+                            <h4 style="color: var(--primary-gold); margin-bottom: var(--spacing-sm);">Audit Partners</h4>
+                            <ul style="color: var(--text-secondary); line-height: 2;">
+                                <li>✓ CertiK - Smart Contract Security Audit</li>
+                                <li>✓ Quantstamp - Security Analysis</li>
+                                <li>✓ OpenZeppelin - Code Review</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="review-section">
+                        <h3>Bug Bounty Program</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            We maintain an active bug bounty program rewarding security researchers who responsibly disclose vulnerabilities.
+                            This helps us maintain the highest security standards and provides an additional layer of protection for our users.
+                        </p>
+                    </div>
+
+                    <div class="review-section">
+                        <h3>Security Disclosures</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            If you discover a security vulnerability, please report it to our security team at security@hajalchemy.com.
+                            We take all reports seriously and will respond within 24 hours.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Create Secure Tokens with Confidence</h2>
+                <p>Deploy your token with industry-leading security standards</p>
+                <button class="btn-primary btn-large" onclick="location.href='create-token.html'">Get Started Now</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>H.A.J Alchemy</h3>
+                    <p>The most advanced token creation platform for Web3 creators.</p>
+                    <div class="social-links">
+                        <a href="#twitter" class="social-link">Twitter</a>
+                        <a href="#discord" class="social-link">Discord</a>
+                        <a href="#telegram" class="social-link">Telegram</a>
+                        <a href="#github" class="social-link">GitHub</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#api">API</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                        <li><a href="#audit">Audit Reports</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 H.A.J Alchemy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

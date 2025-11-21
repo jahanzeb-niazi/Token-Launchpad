@@ -1,5 +1,5 @@
 // wizard.js
-// Module-style file — make sure your HTML loads it as: <script type="module" src="wizard.js"></script>
+
 
 import { ethers } from "https://cdn.jsdelivr.net/npm/ethers@6.11.1/dist/ethers.min.js";
 
@@ -7,7 +7,7 @@ import { ethers } from "https://cdn.jsdelivr.net/npm/ethers@6.11.1/dist/ethers.m
   IMPORTANT:
   Replace FACTORY_ADDRESS with your TokenFactory address deployed on Sepolia.
 */
-const FACTORY_ADDRESS = "0x238E63cd611211E3B108Fcc357A6a536ca7E1855";
+const FACTORY_ADDRESS = "0xDe7eBC9f6152502443e870b81e6E5349649fF01b";
 
 // ABI matching your TokenFactory.createERC20 signature and TokenCreated event
 const FACTORY_ABI = [
@@ -170,9 +170,7 @@ const FACTORY_ABI = [
     }
 ];
 
-// ------------------------------
-// Keep original UI data & functions
-// ------------------------------
+
 let currentStep = 1;
 const totalSteps = 5;
 let tokenData = {

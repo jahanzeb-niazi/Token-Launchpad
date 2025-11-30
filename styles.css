@@ -464,6 +464,7 @@ body {
         transform: translateY(-50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -577,6 +578,7 @@ body {
         opacity: 0;
         transform: translateX(20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -618,7 +620,7 @@ body {
     transition: var(--transition);
 }
 
-.token-type-card input[type="radio"]:checked + .token-type-content {
+.token-type-card input[type="radio"]:checked+.token-type-content {
     border-color: var(--primary-gold);
     background-color: rgba(212, 175, 55, 0.1);
 }
@@ -1003,8 +1005,13 @@ body {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .deployment-status {
@@ -1162,4 +1169,66 @@ body {
     .wizard-navigation button {
         width: 100%;
     }
+
+    /* ----- AUTH PAGE FIXES ----- */
+
+    /* Make labels visible */
+    .auth-container label {
+        color: var(--text-primary, #fdf3f3);
+        font-weight: 600;
+        display: block !important;
+        margin-bottom: 6px;
+    }
+
+    /* Fix dark inputs */
+    .auth-container .form-control,
+    .auth-container input,
+    .auth-container input[type="text"],
+    .auth-container input[type="password"],
+    .auth-container input[type="email"] {
+        background: #fff !important;
+        color: #f7f1f1 !important;
+        border: 1px solid #ccc !important;
+        padding: 10px 12px !important;
+        border-radius: 6px !important;
+        width: 100% !important;
+        font-size: 15px;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    /* Fix hover/focus */
+    .auth-container input:focus {
+        border-color: #4e7cff !important;
+    }
+
+    /* Form container background */
+    .auth-container {
+        background: #ffffff !important;
+        border-radius: 12px !important;
+    }
+
+    /* Placeholder visible */
+    .auth-container input::placeholder {
+        color: #888 !important;
+    }
+
+    /* Button consistency */
+    .auth-container .btn-primary {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .auth-container .btn-outline {
+        padding: 8px 16px;
+    }
+
+    /* Message color fix */
+    #loginMessage,
+    #signupMessage {
+        color: #c62828 !important;
+        font-weight: 600;
+    }
+
 }

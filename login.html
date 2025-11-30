@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login – H.A.J Alchemy</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d1117, #1a2332);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .auth-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .auth-card {
+            width: 420px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .auth-card h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: block;
+            color: #fff;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: #4e7cff;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            background: #4e7cff;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #6b90ff;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .auth-footer a {
+            color: #9bb4ff;
+            text-decoration: none;
+        }
+
+        .auth-footer a:hover {
+            color: #c3d1ff;
+        }
+
+        #loginMessage {
+            margin-top: 10px;
+            color: #ff6b6b;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="brand">
+                    <h1 class="logo">H.A.J Alchemy</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-secondary" id="connectWallet">Connect Wallet</button>
+                    <div id="authButtons"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <h2>Welcome Back</h2>
+
+            <div class="form-group">
+                <label>Username or Email</label>
+                <input type="text" id="li_identifier" class="form-control" placeholder="Enter your username or email">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="li_password" class="form-control" placeholder="••••••••">
+            </div>
+
+            <button class="btn-primary" id="loginBtn">Login</button>
+
+            <p id="loginMessage"></p>
+
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="signup.html">Create one</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        async function doLogin() {
+            const id = document.getElementById('li_identifier').value;
+            const pw = document.getElementById('li_password').value;
+            const msg = document.getElementById('loginMessage');
+
+            msg.textContent = "";
+
+            try {
+                await login({ identifier: id, password: pw });
+                const params = new URLSearchParams(location.search);
+                const next = params.get("next") || "create-token.html";
+                location.href = next;
+            } catch (err) {
+                msg.textContent = err.message;
+            }
+        }
+
+        document.getElementById("loginBtn").onclick = doLogin;
+        document.getElementById("li_password").addEventListener("keydown", (e) => {
+            if (e.key === "Enter") doLogin();
+        });
+    </script>
+</body>
+
+</html>

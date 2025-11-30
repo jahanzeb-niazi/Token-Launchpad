@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H.A.J Alchemy - Create Your Token</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js"></script>
 </head>
 
 <body>
@@ -32,13 +34,17 @@
 
                     <button class="btn-secondary" id="connectWallet">Connect Wallet</button>
                     <button class="btn-primary" onclick="location.href='create-token.html'">Launch App</button>
+
                 </div>
+
                 <div class="mobile-menu-toggle" id="mobileMenuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </nav>
+            <div id="authButtons" style="text-align:right; padding:10px 20px;"></div>
+
         </div>
     </header>
 
@@ -220,10 +226,10 @@
             </div>
         </div>
     </div>
-
-
+    <script src="auth.js"></script>
 
     <script type="module" src="main.js"></script>
+
 </body>
 
 </html>

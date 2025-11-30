@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Features - H.A.J Alchemy</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header class="header">
         <div class="container">
@@ -27,9 +29,14 @@
                         <option value="fr">Français</option>
                         <option value="de">Deutsch</option>
                     </select>
+
                     <button class="btn-secondary" id="connectWallet">Connect Wallet</button>
                     <button class="btn-primary" onclick="location.href='create-token.html'">Launch App</button>
+
+                    <!-- auth UI inserted here (auth.js will populate) -->
+                    <div id="authButtons" style="display:inline-block; margin-left:10px;"></div>
                 </div>
+
             </nav>
         </div>
     </header>
@@ -39,7 +46,8 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 class="hero-title">Powerful Features for Token Creation</h1>
-                    <p class="hero-subtitle">Everything you need to create, deploy, and manage professional tokens across multiple blockchains</p>
+                    <p class="hero-subtitle">Everything you need to create, deploy, and manage professional tokens
+                        across multiple blockchains</p>
                 </div>
             </div>
         </section>
@@ -51,7 +59,8 @@
                     <div class="feature-card">
                         <div class="feature-icon">🪙</div>
                         <h3>ERC-20 Tokens</h3>
-                        <p>Create fungible tokens perfect for cryptocurrencies, utility tokens, and governance tokens. Configure supply, decimals, and advanced tokenomics with ease.</p>
+                        <p>Create fungible tokens perfect for cryptocurrencies, utility tokens, and governance tokens.
+                            Configure supply, decimals, and advanced tokenomics with ease.</p>
                         <ul style="margin-top: 1rem; color: var(--text-secondary); line-height: 2;">
                             <li>✓ Customizable supply and decimals</li>
                             <li>✓ Mintable and burnable options</li>
@@ -61,7 +70,8 @@
                     <div class="feature-card">
                         <div class="feature-icon">🎨</div>
                         <h3>ERC-721 NFTs</h3>
-                        <p>Launch unique non-fungible tokens ideal for digital art, collectibles, and gaming assets. Full metadata support and IPFS integration.</p>
+                        <p>Launch unique non-fungible tokens ideal for digital art, collectibles, and gaming assets.
+                            Full metadata support and IPFS integration.</p>
                         <ul style="margin-top: 1rem; color: var(--text-secondary); line-height: 2;">
                             <li>✓ Unique token IDs</li>
                             <li>✓ Metadata and image support</li>
@@ -71,7 +81,8 @@
                     <div class="feature-card">
                         <div class="feature-icon">🔷</div>
                         <h3>ERC-1155 Multi-Tokens</h3>
-                        <p>Deploy versatile multi-token contracts that support both fungible and non-fungible tokens in a single smart contract.</p>
+                        <p>Deploy versatile multi-token contracts that support both fungible and non-fungible tokens in
+                            a single smart contract.</p>
                         <ul style="margin-top: 1rem; color: var(--text-secondary); line-height: 2;">
                             <li>✓ Mixed token types</li>
                             <li>✓ Gas-efficient batch transfers</li>
@@ -89,7 +100,8 @@
                     <div class="feature-card">
                         <div class="feature-icon">🔗</div>
                         <h3>Ethereum Mainnet</h3>
-                        <p>Deploy on the world's leading smart contract platform with maximum security and decentralization.</p>
+                        <p>Deploy on the world's leading smart contract platform with maximum security and
+                            decentralization.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">💎</div>
@@ -127,22 +139,26 @@
                     <div class="feature-card">
                         <div class="feature-icon">💰</div>
                         <h3>Transaction Fees</h3>
-                        <p>Configure customizable transaction fees with flexible distribution between burn, liquidity, and reflections.</p>
+                        <p>Configure customizable transaction fees with flexible distribution between burn, liquidity,
+                            and reflections.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🔥</div>
                         <h3>Auto-Burn Mechanism</h3>
-                        <p>Automatically burn a percentage of each transaction to create deflationary pressure and increase scarcity.</p>
+                        <p>Automatically burn a percentage of each transaction to create deflationary pressure and
+                            increase scarcity.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🎁</div>
                         <h3>Holder Reflections</h3>
-                        <p>Reward token holders with automatic reflections from transaction fees, encouraging long-term holding.</p>
+                        <p>Reward token holders with automatic reflections from transaction fees, encouraging long-term
+                            holding.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">💵</div>
                         <h3>Buyback & Burn</h3>
-                        <p>Implement automated buyback mechanisms that purchase tokens from the market and burn them.</p>
+                        <p>Implement automated buyback mechanisms that purchase tokens from the market and burn them.
+                        </p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🏊</div>
@@ -165,17 +181,20 @@
                     <div class="feature-card">
                         <div class="feature-icon">📝</div>
                         <h3>Live Preview</h3>
-                        <p>See your token configuration in real-time with our interactive preview panel showing all settings and features.</p>
+                        <p>See your token configuration in real-time with our interactive preview panel showing all
+                            settings and features.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🔍</div>
                         <h3>Instant Verification</h3>
-                        <p>Automatically verify your smart contract on blockchain explorers for transparency and trust.</p>
+                        <p>Automatically verify your smart contract on blockchain explorers for transparency and trust.
+                        </p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">💼</div>
                         <h3>Wallet Integration</h3>
-                        <p>Seamless connection with MetaMask, WalletConnect, Coinbase Wallet, and other popular Web3 wallets.</p>
+                        <p>Seamless connection with MetaMask, WalletConnect, Coinbase Wallet, and other popular Web3
+                            wallets.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">📈</div>
@@ -185,7 +204,8 @@
                     <div class="feature-card">
                         <div class="feature-icon">🛠️</div>
                         <h3>No Coding Required</h3>
-                        <p>User-friendly interface that requires zero programming knowledge. Create professional tokens in minutes.</p>
+                        <p>User-friendly interface that requires zero programming knowledge. Create professional tokens
+                            in minutes.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">📱</div>
@@ -200,7 +220,8 @@
             <div class="container">
                 <h2>Ready to Create Your Token?</h2>
                 <p>Start building with H.A.J Alchemy today</p>
-                <button class="btn-primary btn-large" onclick="location.href='create-token.html'">Get Started Now</button>
+                <button class="btn-primary btn-large" onclick="location.href='create-token.html'">Get Started
+                    Now</button>
             </div>
         </section>
     </main>
@@ -251,7 +272,10 @@
             </div>
         </div>
     </footer>
+    <script src="auth.js"></script>
 
     <script type="module" src="main.js"></script>
+
 </body>
+
 </html>

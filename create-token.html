@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Token - H.A.J Alchemy</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header class="header">
         <div class="container">
@@ -27,9 +29,13 @@
                         <option value="fr">Français</option>
                         <option value="de">Deutsch</option>
                     </select>
-                    <button class="btn-secondary" id="connectWalletBtn">Connect Wallet</button>
+
+                    <button class="btn-secondary" id="connectWallet">Connect Wallet</button>
+                    <button class="btn-primary" onclick="location.href='create-token.html'">Launch App</button>
                 </div>
+
             </nav>
+            <div id="authButtons" style="text-align:right; padding:10px 20px;"></div>
         </div>
     </header>
 
@@ -54,7 +60,8 @@
                                     <input type="radio" name="tokenType" value="ERC20" checked>
                                     <div class="token-type-content">
                                         <h3>ERC-20</h3>
-                                        <p>Fungible tokens - Perfect for cryptocurrencies, utility tokens, and governance tokens</p>
+                                        <p>Fungible tokens - Perfect for cryptocurrencies, utility tokens, and
+                                            governance tokens</p>
                                         <span class="token-type-badge">Most Popular</span>
                                     </div>
                                 </label>
@@ -62,14 +69,16 @@
                                     <input type="radio" name="tokenType" value="ERC721">
                                     <div class="token-type-content">
                                         <h3>ERC-721</h3>
-                                        <p>Non-fungible tokens - Ideal for unique digital collectibles, NFT art, and gaming assets</p>
+                                        <p>Non-fungible tokens - Ideal for unique digital collectibles, NFT art, and
+                                            gaming assets</p>
                                     </div>
                                 </label>
                                 <label class="token-type-card">
                                     <input type="radio" name="tokenType" value="ERC1155">
                                     <div class="token-type-content">
                                         <h3>ERC-1155</h3>
-                                        <p>Multi-token standard - Supports both fungible and non-fungible tokens in one contract</p>
+                                        <p>Multi-token standard - Supports both fungible and non-fungible tokens in one
+                                            contract</p>
                                     </div>
                                 </label>
                             </div>
@@ -96,19 +105,22 @@
 
                             <div class="form-group">
                                 <label for="tokenName">Token Name <span class="required">*</span></label>
-                                <input type="text" id="tokenName" class="form-control" placeholder="e.g., My Awesome Token" maxlength="40" required>
+                                <input type="text" id="tokenName" class="form-control"
+                                    placeholder="e.g., My Awesome Token" maxlength="40" required>
                                 <small class="form-hint">Maximum 40 characters</small>
                             </div>
 
                             <div class="form-group">
                                 <label for="tokenSymbol">Token Symbol <span class="required">*</span></label>
-                                <input type="text" id="tokenSymbol" class="form-control" placeholder="e.g., MAT" maxlength="8" required>
+                                <input type="text" id="tokenSymbol" class="form-control" placeholder="e.g., MAT"
+                                    maxlength="8" required>
                                 <small class="form-hint">2-8 uppercase characters (A-Z, 0-9)</small>
                             </div>
 
                             <div class="form-group" id="totalSupplyGroup">
                                 <label for="totalSupply">Total Supply <span class="required">*</span></label>
-                                <input type="number" id="totalSupply" class="form-control" placeholder="e.g., 1000000" min="1" required>
+                                <input type="number" id="totalSupply" class="form-control" placeholder="e.g., 1000000"
+                                    min="1" required>
                                 <small class="form-hint">Total number of tokens to be created</small>
                             </div>
 
@@ -158,7 +170,8 @@
                                     <div class="form-group">
                                         <label for="transactionFee">Transaction Fee Percentage</label>
                                         <div class="slider-container">
-                                            <input type="range" id="transactionFee" min="0" max="25" value="5" step="0.5" class="slider">
+                                            <input type="range" id="transactionFee" min="0" max="25" value="5"
+                                                step="0.5" class="slider">
                                             <span class="slider-value" id="transactionFeeValue">5%</span>
                                         </div>
                                     </div>
@@ -169,7 +182,8 @@
                                     <div class="form-group">
                                         <label for="burnFee">Burn Fee</label>
                                         <div class="slider-container">
-                                            <input type="range" id="burnFee" min="0" max="100" value="30" class="slider">
+                                            <input type="range" id="burnFee" min="0" max="100" value="30"
+                                                class="slider">
                                             <span class="slider-value" id="burnFeeValue">30%</span>
                                         </div>
                                     </div>
@@ -177,7 +191,8 @@
                                     <div class="form-group">
                                         <label for="liquidityFee">Liquidity Fee</label>
                                         <div class="slider-container">
-                                            <input type="range" id="liquidityFee" min="0" max="100" value="40" class="slider">
+                                            <input type="range" id="liquidityFee" min="0" max="100" value="40"
+                                                class="slider">
                                             <span class="slider-value" id="liquidityFeeValue">40%</span>
                                         </div>
                                     </div>
@@ -185,14 +200,16 @@
                                     <div class="form-group">
                                         <label for="reflectionFee">Reflection Fee</label>
                                         <div class="slider-container">
-                                            <input type="range" id="reflectionFee" min="0" max="100" value="30" class="slider">
+                                            <input type="range" id="reflectionFee" min="0" max="100" value="30"
+                                                class="slider">
                                             <span class="slider-value" id="reflectionFeeValue">30%</span>
                                         </div>
                                     </div>
 
                                     <div class="fee-total">
                                         <strong>Total: <span id="feeTotal">100%</span></strong>
-                                        <span id="feeWarning" class="warning-text" style="display: none;">Must equal 100%</span>
+                                        <span id="feeWarning" class="warning-text" style="display: none;">Must equal
+                                            100%</span>
                                     </div>
                                 </div>
 
@@ -265,9 +282,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ownerWallet">Owner Wallet Address <span class="required">*</span></label>
-                                    <input type="text" id="ownerWallet" class="form-control" placeholder="0x..." required>
-                                    <small class="form-hint">Address that will own and control the token contract</small>
+                                    <label for="ownerWallet">Owner Wallet Address <span
+                                            class="required">*</span></label>
+                                    <input type="text" id="ownerWallet" class="form-control" placeholder="0x..."
+                                        required>
+                                    <small class="form-hint">Address that will own and control the token
+                                        contract</small>
                                 </div>
                             </div>
                         </div>
@@ -331,7 +351,8 @@
                                 <div class="terms-acceptance">
                                     <label class="checkbox-label">
                                         <input type="checkbox" id="acceptTerms" required>
-                                        <span>I accept the <a href="#terms" target="_blank">Terms & Conditions</a> and understand the risks</span>
+                                        <span>I accept the <a href="#terms" target="_blank">Terms & Conditions</a> and
+                                            understand the risks</span>
                                     </label>
                                 </div>
                             </div>
@@ -339,9 +360,11 @@
                     </div>
 
                     <div class="wizard-navigation">
-                        <button type="button" class="btn-secondary" id="prevBtn" style="display: none;">Previous</button>
+                        <button type="button" class="btn-secondary" id="prevBtn"
+                            style="display: none;">Previous</button>
                         <button type="button" class="btn-primary" id="nextBtn">Next</button>
-                        <button type="button" class="btn-primary" id="deployBtn" style="display: none;">Deploy Token</button>
+                        <button type="button" class="btn-primary" id="deployBtn" style="display: none;">Deploy
+                            Token</button>
                     </div>
                 </div>
 
@@ -458,7 +481,18 @@
             </div>
         </div>
     </div>
+    <script src="auth.js"></script>
+    <script>
+        // Force authentication before loading the wizard.
+        // If not logged in, user will be redirected to login.html with ?next=create-token.html
+        document.addEventListener('DOMContentLoaded', function () {
+            // requireAuth will redirect if not logged in
+            if (!window.requireAuth) return;
+            window.requireAuth('create-token.html');
+        });
+    </script>
 
     <script type="module" src="wizard.js"></script>
 </body>
+
 </html>

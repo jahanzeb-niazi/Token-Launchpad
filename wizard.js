@@ -320,8 +320,12 @@ function setupEventListeners() {
         tokenData.ownerWallet = e.target.value;
     });
 
+
+    const connectWalletBtn = document.getElementById('connectWallet');
+
+
     // ----- Wallet connect: REPLACE the fake alert with real connect logic -----
-    const connectWalletBtn = document.getElementById('connectWalletBtn');
+
     if (connectWalletBtn) {
         connectWalletBtn.addEventListener('click', async () => {
             try {

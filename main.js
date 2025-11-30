@@ -1,3 +1,5 @@
+
+
 const walletModal = document.getElementById('walletModal');
 const connectWalletBtn = document.getElementById('connectWallet');
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
